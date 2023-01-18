@@ -3,8 +3,11 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("CMakeProject5.1")
+project ("CMakeProject")
+include(FetchContent)
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.10.5/json.tar.xz)
+FetchContent_MakeAvailable(json)
 set(JSON_BuildTests OFF CACHE INTERNAL "")
-add_subdirectory(nlohmann_json)
 # Включите подпроекты.
 add_subdirectory ("CMakeProject5.1")
+add_subdirectory ("CMakeProject5.2")
